@@ -1,0 +1,14 @@
+{
+  "folders": [
+    {
+      "name": "client-alteredstates-web",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/node_modules": true,
+      "**/dist": true
+    }
+  }
+}

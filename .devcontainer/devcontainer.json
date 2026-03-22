@@ -1,0 +1,21 @@
+{
+  "name": "client-alteredstates-web",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "workspaceFolder": "/workspace/client-alteredstates-web",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace/client-alteredstates-web,type=bind,consistency=cached",
+  "postCreateCommand": "npm run install:all",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      },
+      "extensions": [
+        "ms-vscode-remote.remote-containers",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  }
+}
