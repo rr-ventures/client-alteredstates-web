@@ -31,12 +31,12 @@ npm run dev:bolt
 
 Open in your system browser (Vite also tries to open one for you):
 
-- Lovable: [http://127.0.0.1:8080](http://127.0.0.1:8080) or [http://localhost:8080](http://localhost:8080)
-- Bolt: [http://127.0.0.1:8081](http://127.0.0.1:8081) or [http://localhost:8081](http://localhost:8081)
+- Lovable: [http://localhost:5173](http://localhost:5173) (default; may shift if the port is busy — read the terminal)
+- Bolt: [http://localhost:5174](http://localhost:5174)
 
-Do not use `http://0.0.0.0:8080` in the browser — that is not a valid destination on Windows.
+We avoid **8080/8081** here because they are very often taken by other tools (Docker Desktop, other apps), which makes Vite exit immediately and the site look “broken” in the browser.
 
-If a port is already in use, either stop the other process or change the `port` in that app’s `vite.config.ts`.
+If `npm run dev` prints a different URL, use that one. To free a port on Windows: `Get-NetTCPConnection -LocalPort 5173` then stop the listed process.
 
 ## Shared Docker setup
 

@@ -1,13 +1,11 @@
-# Starts each runnable site variant in its own terminal window.
-# Lovable: http://localhost:8080
-# Bolt:    http://localhost:8081
+# Default ports: Lovable 5173, Bolt 5174 (see vite.config.ts). If busy, Vite increments — read the terminal.
 
 $ErrorActionPreference = "Stop"
 $repoRoot = Resolve-Path (Join-Path $PSScriptRoot "..\\..\\..")
 
 $sites = @(
-    @{ Name = "Lovable"; Path = Join-Path $repoRoot "apps\\lovable"; Url = "http://localhost:8080" },
-    @{ Name = "Bolt"; Path = Join-Path $repoRoot "apps\\bolt"; Url = "http://localhost:8081" }
+    @{ Name = "Lovable"; Path = Join-Path $repoRoot "apps\\lovable"; Url = "http://localhost:5173" },
+    @{ Name = "Bolt"; Path = Join-Path $repoRoot "apps\\bolt"; Url = "http://localhost:5174" }
 )
 
 foreach ($site in $sites) {
