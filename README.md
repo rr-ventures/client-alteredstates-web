@@ -8,7 +8,7 @@ Umbrella repo for the Altered States website variants.
 - `apps/bolt` - current Bolt version
 - `apps/asbreathwork` - placeholder/client repo content copied in as-is
 
-## Local development
+## Local development (no container required)
 
 Install dependencies for the Vite apps:
 
@@ -29,19 +29,15 @@ npm run dev:lovable
 npm run dev:bolt
 ```
 
-Current ports:
+Open in your system browser (Vite also tries to open one for you):
 
-- Lovable: `http://localhost:8080`
-- Bolt: `http://localhost:8081`
+- Lovable: [http://127.0.0.1:8080](http://127.0.0.1:8080) or [http://localhost:8080](http://localhost:8080)
+- Bolt: [http://127.0.0.1:8081](http://127.0.0.1:8081) or [http://localhost:8081](http://localhost:8081)
 
-Use those URLs in your **system browser** (Chrome/Edge). Do not use `http://0.0.0.0:8080` — that address is not valid in a normal browser.
+Do not use `http://0.0.0.0:8080` in the browser — that is not a valid destination on Windows.
 
-## Dev container
+If a port is already in use, either stop the other process or change the `port` in that app’s `vite.config.ts`.
 
-Open this repo in Cursor, then use `Reopen in Container`.
+## Shared Docker setup
 
-The container opens the new root repo so you can work across all app variants in one place.
-
-Ports **8080** and **8081** are forwarded to your machine automatically. After changing `.devcontainer/devcontainer.json`, run **Dev Containers: Rebuild Container** once so forwarding is applied.
-
-If a site still won’t load from the host browser, check the **Ports** panel in Cursor/VS Code and confirm `8080` / `8081` are forwarded (not “private” only).
+This repo does **not** ship its own Dev Container. Use your existing shared environment if you develop inside Docker elsewhere.

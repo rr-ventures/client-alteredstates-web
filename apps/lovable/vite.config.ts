@@ -1,33 +1,23 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
-import fs from "node:fs";
 import { componentTagger } from "lovable-tagger";
 
-const inDocker = fs.existsSync("/.dockerenv");
-
 // https://vitejs.dev/config/
+// Local dev on Windows: bind loopback so http://127.0.0.1:8080 / http://localhost:8080 work in your system browser.
 export default defineConfig(({ mode }) => ({
   server: {
-    // Listen on all interfaces so Dev Containers port forwarding can reach the dev server
-    host: "0.0.0.0",
+    host: "127.0.0.1",
     port: 8080,
     strictPort: true,
-    // In containers, auto-open has no display; on host use http://localhost:8080 (forwarded)
-    open: false,
-    watch: inDocker
-      ? {
-          // Bind mounts in Dev Containers often need polling for reliable HMR
-          usePolling: true,
-        }
-      : undefined,
+    open: true,
     hmr: {
+      host: "127.0.0.1",
       overlay: false,
-      ...(inDocker ? { clientPort: 8080 } : {}),
     },
   },
   preview: {
-    host: "0.0.0.0",
+    host: "127.0.0.1",
     port: 4173,
     strictPort: true,
   },

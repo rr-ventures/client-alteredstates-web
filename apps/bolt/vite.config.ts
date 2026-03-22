@@ -1,26 +1,24 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import fs from 'node:fs';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
-const inDocker = fs.existsSync('/.dockerenv');
-
-// https://vitejs.dev/config/
+// Local dev on Windows: bind loopback so http://127.0.0.1:8081 / http://localhost:8081 work in your system browser.
 export default defineConfig({
   server: {
-    host: "0.0.0.0",
+    host: "127.0.0.1",
     port: 8081,
     strictPort: true,
-    open: false,
-    watch: inDocker ? { usePolling: true } : undefined,
-    hmr: inDocker ? { clientPort: 8081 } : undefined,
+    open: true,
+    hmr: {
+      host: "127.0.0.1",
+    },
   },
   preview: {
-    host: "0.0.0.0",
+    host: "127.0.0.1",
     port: 4174,
     strictPort: true,
   },
   plugins: [react()],
   optimizeDeps: {
-    exclude: ['lucide-react'],
+    exclude: ["lucide-react"],
   },
 });
