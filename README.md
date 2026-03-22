@@ -34,8 +34,14 @@ Current ports:
 - Lovable: `http://localhost:8080`
 - Bolt: `http://localhost:8081`
 
+Use those URLs in your **system browser** (Chrome/Edge). Do not use `http://0.0.0.0:8080` — that address is not valid in a normal browser.
+
 ## Dev container
 
 Open this repo in Cursor, then use `Reopen in Container`.
 
 The container opens the new root repo so you can work across all app variants in one place.
+
+Ports **8080** and **8081** are forwarded to your machine automatically. After changing `.devcontainer/devcontainer.json`, run **Dev Containers: Rebuild Container** once so forwarding is applied.
+
+If a site still won’t load from the host browser, check the **Ports** panel in Cursor/VS Code and confirm `8080` / `8081` are forwarded (not “private” only).
