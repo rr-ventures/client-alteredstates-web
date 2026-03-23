@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altered States Experience | Breathwork & Transformation</title>
+    <meta name="description" content="The psychedelic inspired breathwork experience guaranteed to open your heart and blow your mind! Safe, legal, drug-free alternative to psychedelic experiences.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&family=Montserrat:ital,wght@0,400;0,700;0,900;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Calendly link widget -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            coral: '#F26B5B', // Primary accent inspired by Rhythm of Breath
+                            purple: '#6B21A8', // Secondary accent from brand guide
+                            dark: '#171717',
+                            light: '#FAFAFA',
+                            amber: '#F59E0B'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Bebas Neue', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'], // For editorial headings like V1 ref
+                        montserrat: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles */
+        .text-outline {
+            -webkit-text-stroke: 1px white;
+            color: transparent;
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+        }
+
+        .section-padding {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+
+        .quote-mark {
+            font-family: 'Playfair Display', serif;
+            font-size: 8rem;
+            line-height: 1;
+            color: #F26B5B;
+            opacity: 0.2;
+            position: absolute;
+            top: -2rem;
+            left: -1rem;
+            z-index: -1;
+        }
+
+        /* Hide scrollbar for carousels */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="font-sans text-brand-dark bg-white antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-gray-100" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="font-display text-2xl tracking-widest text-brand-dark">ALTERED STATES</a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#who-we-are" class="text-sm font-medium text-gray-600 hover:text-brand-coral transition-colors">About</a>
+                    <a href="#offerings" class="text-sm font-medium text-gray-600 hover:text-brand-coral transition-colors">Offerings</a>
+                    <a href="#events" class="text-sm font-medium text-gray-600 hover:text-brand-coral transition-colors">Events</a>
+                    <a href="#retreat" class="text-sm font-medium text-gray-600 hover:text-brand-coral transition-colors">Retreat</a>
+                    <a href="#team" class="text-sm font-medium text-gray-600 hover:text-brand-coral transition-colors">Team</a>
+                    <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/placeholder'});return false;" class="bg-brand-coral text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-orange-600 transition-colors shadow-lg shadow-brand-coral/30">
+                        Apply for Retreat
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                <source src="hero-video.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto mt-16">
+            <h1 class="font-display text-6xl md:text-8xl lg:text-9xl text-white tracking-wider mb-6 drop-shadow-lg">
+                TRANSFORMATION & <br>
+                <span class="text-brand-coral">THE MYSTICAL EXPERIENCE</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-white/90 font-serif italic mb-10 max-w-3xl mx-auto">
+                The psychedelic inspired breathwork experience guaranteed to open your heart and blow your mind!
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/placeholder'});return false;" class="bg-brand-coral text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-orange-600 transition-all shadow-lg shadow-brand-coral/40 hover:-translate-y-1">
+                    Apply for the Retreat
+                </button>
+                <a href="#events" class="bg-white/10 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-white hover:text-brand-dark transition-all">
+                    Find an Event Near You
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro / Who We Are -->
+    <section id="who-we-are" class="section-padding bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 relative">
+                    <div class="absolute top-0 left-0 w-32 h-32 bg-brand-coral/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+                    <p class="text-brand-coral font-bold tracking-[0.2em] text-sm mb-4 uppercase">Who We Are</p>
+                    <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl text-brand-dark mb-8 leading-tight">
+                        A safe, supportive and fun space for <span class="italic text-brand-coral">inner exploration</span> and evolution.
+                    </h2>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        We bring reverence to altered states of consciousness as a tool for profound personal healing and transformation. 
+                    </p>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                        Experience non-ordinary states of consciousness as a powerful and accelerated method of healing and personal transformation — without substances. Our neuroscience-backed ceremonies provide a legal, safe, and expertly facilitated rite of passage.
+                    </p>
+                    <a href="#offerings" class="inline-flex items-center text-brand-coral font-semibold hover:text-orange-600 transition-colors group">
+                        Explore our offerings 
+                        <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                </div>
+                <div class="lg:w-1/2 relative">
+                    <div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative z-10">
+                        <img src="../../references/client_assets/609498552_17992334450911758_7260561423754856278_n.jpg" alt="Altered States Breathwork Session" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Decorative element behind image -->
+                    <div class="absolute -bottom-8 -right-8 w-full h-full border-2 border-brand-coral rounded-2xl z-0"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof #1 (Scattered Quote) -->
+    <section class="py-20 bg-brand-light relative">
+        <div class="max-w-4xl mx-auto px-4 text-center relative">
+            <span class="quote-mark left-0 md:-left-12 top-0 md:-top-8">"</span>
+            <p class="font-serif text-2xl md:text-3xl lg:text-4xl text-brand-dark italic leading-relaxed relative z-10">
+                In just three nights, I experienced profound healing, renewal, and a deeper connection to the mystical than I ever thought possible.
+            </p>
+            <p class="mt-8 font-bold text-brand-coral tracking-widest uppercase">— Vi</p>
+        </div>
+    </section>
+
+    <!-- What We Offer -->
+    <section id="offerings" class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <p class="text-brand-coral font-bold tracking-[0.2em] text-sm mb-4 uppercase">Our Offerings</p>
+                <h2 class="font-serif text-4xl md:text-5xl text-brand-dark mb-4">Journeys of Transformation</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 lg:gap-20">
+                <!-- Offering 1 -->
+                <div class="group cursor-pointer">
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden mb-8 relative">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors z-10"></div>
+                        <img src="../../references/client_assets/612405873_17993039429911758_2395989327158954337_n.jpg" alt="City Workshops" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute bottom-6 left-6 z-20">
+                            <span class="bg-white text-brand-dark text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Low-Ticket</span>
+                        </div>
+                    </div>
+                    <h3 class="font-serif text-3xl text-brand-dark mb-4 group-hover:text-brand-coral transition-colors">City Workshops & Events</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Evening workshops, sound journeys, and full-day experiences across Sydney, Newcastle, Central Coast, Gold Coast, and Melbourne. Includes guided breathwork, live music, and optional Lion's Mane mushroom.
+                    </p>
+                    <a href="#events" class="inline-block border-b-2 border-brand-coral text-brand-dark font-semibold pb-1 hover:text-brand-coral transition-colors">Find an Event Near You</a>
+                </div>
+
+                <!-- Offering 2 -->
+                <div class="group cursor-pointer mt-12 md:mt-24">
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden mb-8 relative">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors z-10"></div>
+                        <img src="../../references/client_assets/609859673_17992144829911758_3627750128898244285_n.jpg" alt="Immersion Retreat" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute bottom-6 left-6 z-20">
+                            <span class="bg-brand-coral text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Flagship Offer</span>
+                        </div>
+                    </div>
+                    <h3 class="font-serif text-3xl text-brand-dark mb-4 group-hover:text-brand-coral transition-colors">Immersion Retreat</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        "Rites of Passage & Transformation" — A 4-day all-inclusive retreat at The Oasis at One Mile Beach. Embody the keys to self-mastery with expanded states of consciousness. Limited to 20 participants.
+                    </p>
+                    <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/placeholder'});return false;" class="inline-block border-b-2 border-brand-coral text-brand-dark font-semibold pb-1 hover:text-brand-coral transition-colors">Apply for the Retreat</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Retreat (Immersive Section) -->
+    <section id="retreat" class="py-24 bg-brand-dark relative overflow-hidden text-white">
+        <div class="absolute inset-0 opacity-40">
+            <img src="../../references/client_assets/610195304_17992334459911758_6541602778669642153_n.jpg" alt="Retreat Background" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-brand-purple/80 mix-blend-multiply"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <p class="text-brand-coral font-bold tracking-[0.2em] text-sm mb-4 uppercase">The Flagship Experience</p>
+                    <h2 class="font-display text-5xl md:text-7xl mb-6 tracking-wide">RITES OF PASSAGE <br><span class="text-outline">& TRANSFORMATION</span></h2>
+                    <p class="text-xl font-serif italic text-white/90 mb-8">
+                        Psycho-spiritual rebirth in a private 5-acre sanctuary.
+                    </p>
+                    
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-brand-coral mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span>4 days / 3 nights all-inclusive accommodation & meals</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-brand-coral mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span>Daily breathwork, firewalk ceremony & ice bath</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-brand-coral mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span>Live tribal drumming & Music of the Plants sound journey</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-brand-coral mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span>6-week total support (pre-retreat + 28-day integration)</span>
+                        </li>
+                    </ul>
+
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl mb-8">
+                        <p class="text-brand-amber font-bold uppercase tracking-wider mb-2 flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path></svg>
+                            Strictly Limited to 20 Participants
+                        </p>
+                        <p class="text-sm text-white/80">Our next immersion is filling fast. Book a discovery call to secure your spot.</p>
+                    </div>
+
+                    <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/placeholder'});return false;" class="bg-brand-coral text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-orange-600 transition-all shadow-lg shadow-brand-coral/40 w-full sm:w-auto text-center">
+                        Apply Now — Limited Spots
+                    </button>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="../../references/client_assets/620417633_17994215384911758_1499016141491528773_n.jpg" alt="Retreat Experience" class="rounded-xl w-full h-64 object-cover mt-8">
+                    <img src="../../references/client_assets/611185010_17992576616911758_6359808428520505471_n.jpg" alt="Retreat Group" class="rounded-xl w-full h-64 object-cover">
+                    <img src="../../references/client_assets/620500103_17994215375911758_7984306465112398357_n.jpg" alt="Breathwork" class="rounded-xl w-full h-48 object-cover col-span-2">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof #2 (Reviews) -->
+    <section class="section-padding bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <p class="text-brand-coral font-bold tracking-[0.2em] text-sm mb-4 uppercase">Real Stories</p>
+                <h2 class="font-serif text-4xl md:text-5xl text-brand-dark mb-6">A Community of 500+ Explorers</h2>
+                <div class="flex justify-center items-center gap-8 text-brand-dark/70 font-medium">
+                    <span class="flex items-center"><svg class="w-5 h-5 text-brand-amber mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg> 5 Stars</span>
+                    <span>284 Reviews</span>
+                    <span>100% Recommend</span>
+                </div>
+            </div>
+
+            <!-- Testimonial Slider (CSS only for demo) -->
+            <div class="flex overflow-x-auto gap-6 pb-8 no-scrollbar snap-x">
+                <!-- Review 1 -->
+                <div class="min-w-[300px] md:min-w-[400px] bg-white p-8 rounded-2xl shadow-sm border border-gray-100 snap-center relative">
+                    <span class="quote-mark text-6xl top-4 left-4 opacity-10">"</span>
+                    <div class="flex text-brand-amber mb-4">
+                        ★★★★★
+                    </div>
+                    <p class="text-gray-600 italic mb-6 relative z-10">"Over the 4 days, I gained more insight, clarity and direction than I had in the last 5 years. The most profound experience I have ever invested in myself."</p>
+                    <p class="font-bold text-brand-dark">— Travis</p>
+                </div>
+                <!-- Review 2 -->
+                <div class="min-w-[300px] md:min-w-[400px] bg-white p-8 rounded-2xl shadow-sm border border-gray-100 snap-center relative">
+                    <span class="quote-mark text-6xl top-4 left-4 opacity-10">"</span>
+                    <div class="flex text-brand-amber mb-4">
+                        ★★★★★
+                    </div>
+                    <p class="text-gray-600 italic mb-6 relative z-10">"I pushed far beyond what I thought I was capable of, surrounded by amazing, like-minded people. The connection and breakthroughs were unreal."</p>
+                    <p class="font-bold text-brand-dark">— Sarah</p>
+                </div>
+                <!-- Review 3 -->
+                <div class="min-w-[300px] md:min-w-[400px] bg-white p-8 rounded-2xl shadow-sm border border-gray-100 snap-center relative">
+                    <span class="quote-mark text-6xl top-4 left-4 opacity-10">"</span>
+                    <div class="flex text-brand-amber mb-4">
+                        ★★★★★
+                    </div>
+                    <p class="text-gray-600 italic mb-6 relative z-10">"It was not my first breathwork experience, but it was absolutely the best!!! Gene's command FOCUS!!! was so to the point! Live music was truly sensational!!!"</p>
+                    <p class="font-bold text-brand-dark">— Facebook Review</p>
+                </div>
+                <!-- Review 4 -->
+                <div class="min-w-[300px] md:min-w-[400px] bg-white p-8 rounded-2xl shadow-sm border border-gray-100 snap-center relative">
+                    <span class="quote-mark text-6xl top-4 left-4 opacity-10">"</span>
+                    <div class="flex text-brand-amber mb-4">
+                        ★★★★★
+                    </div>
+                    <p class="text-gray-600 italic mb-6 relative z-10">"To say it was life changing would not be an exaggeration. Gene, Joshua and the wonderful team created a nourishing, safe, fun, enlightening atmosphere."</p>
+                    <p class="font-bold text-brand-dark">— Kathy</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Events (Humanitix Placeholder) -->
+    <section id="events" class="section-padding bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <p class="text-brand-coral font-bold tracking-[0.2em] text-sm mb-4 uppercase">Join Us Live</p>
+                <h2 class="font-serif text-4xl md:text-5xl text-brand-dark mb-6">Upcoming Events</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Find a breathwork workshop near you. We regularly host events in Sydney, Newcastle, Central Coast, Gold Coast, and Melbourne.</p>
+            </div>
+
+            <!-- Humanitix Widget Placeholder -->
+            <div class="bg-brand-light border border-gray-200 rounded-2xl p-8 text-center min-h-[400px] flex flex-col items-center justify-center">
+                <svg class="w-12 h-12 text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                <h3 class="text-xl font-bold text-gray-700 mb-2">[Humanitix Collection Widget]</h3>
+                <p class="text-gray-500 mb-6">The live event schedule will automatically populate here.</p>
+                <a href="https://events.humanitix.com/host/alteredstatesexperience" target="_blank" class="bg-brand-dark text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-black transition-colors">
+                    View on Humanitix
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Team -->
+    <section id="team" class="section-padding bg-brand-light relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <p class="text-brand-coral font-bold tracking-[0.2em] text-sm mb-4 uppercase">Expert Facilitation</p>
+                <h2 class="font-serif text-4xl md:text-5xl text-brand-dark">Meet The Team</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Gene -->
+                <div class="text-center group">
+                    <div class="w-48 h-48 mx-auto rounded-full overflow-hidden mb-6 border-4 border-white shadow-lg relative">
+                        <img src="../../references/client_assets/587559784_17990523992911758_7449764443645668391_n.jpg" alt="Gene Kelly" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <h3 class="font-display text-2xl tracking-wide mb-1">Gene Kelly</h3>
+                    <p class="text-brand-coral font-medium text-sm mb-4 uppercase tracking-wider">Founder & Lead Facilitator</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Rebirthing breathwork facilitator, holistic health coach, and death doula. Gene uses non-ordinary states of consciousness as a catalyst to change the brain to help others heal, awaken and unlock their full potential.
+                    </p>
+                </div>
+
+                <!-- Joshua -->
+                <div class="text-center group">
+                    <div class="w-48 h-48 mx-auto rounded-full overflow-hidden mb-6 border-4 border-white shadow-lg relative">
+                        <img src="../../references/client_assets/590422979_17990325833911758_5591702416302999544_n.jpg" alt="Joshua Tree" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <h3 class="font-display text-2xl tracking-wide mb-1">Joshua Tree</h3>
+                    <p class="text-brand-coral font-medium text-sm mb-4 uppercase tracking-wider">Lead Musician</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Extraordinary multi-instrumentalist weaving instruments of the breath, skin and wood to create a sonic experience. Completing Masters in Mental Health (Art Therapy).
+                    </p>
+                </div>
+
+                <!-- Clara -->
+                <div class="text-center group">
+                    <div class="w-48 h-48 mx-auto rounded-full overflow-hidden mb-6 border-4 border-white shadow-lg relative">
+                        <img src="../../references/client_assets/600820150_17990422193911758_1000555469359433895_n.jpg" alt="Clara Marri" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <h3 class="font-display text-2xl tracking-wide mb-1">Clara Marri</h3>
+                    <p class="text-brand-coral font-medium text-sm mb-4 uppercase tracking-wider">Holistic Practitioner</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Blending bodywork, breathwork, energy work and somatic practices to help people release old patterns. Her work bridges science and ancient, earth-rooted traditions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Dramatic) -->
+    <footer class="bg-brand-purple relative overflow-hidden pt-20 pb-10">
+        <!-- Background gradient overlay -->
+        <div class="absolute inset-0 bg-gradient-to-br from-brand-dark via-brand-purple/80 to-brand-dark z-0"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 mb-16 border-b border-white/10 pb-16">
+                <div>
+                    <h3 class="font-serif text-3xl text-white mb-6">Stay Connected</h3>
+                    <p class="text-white/70 mb-6 max-w-md">Join our community to receive updates on upcoming events, retreats, and get our free Breathwork Release Guide.</p>
+                    <form class="flex gap-2 max-w-md">
+                        <input type="email" placeholder="Your email address" class="bg-white/10 border border-white/20 text-white placeholder-white/50 px-4 py-3 rounded-md flex-grow focus:outline-none focus:border-brand-coral">
+                        <button type="submit" class="bg-brand-coral text-white px-6 py-3 rounded-md font-medium hover:bg-orange-600 transition-colors">Subscribe</button>
+                    </form>
+                </div>
+                <div class="grid grid-cols-2 gap-8 md:justify-items-end">
+                    <div>
+                        <h4 class="text-white font-bold tracking-wider mb-4 uppercase text-sm">Explore</h4>
+                        <ul class="space-y-3">
+                            <li><a href="#who-we-are" class="text-white/70 hover:text-white transition-colors">About Us</a></li>
+                            <li><a href="#offerings" class="text-white/70 hover:text-white transition-colors">Offerings</a></li>
+                            <li><a href="#events" class="text-white/70 hover:text-white transition-colors">Events</a></li>
+                            <li><a href="#retreat" class="text-white/70 hover:text-white transition-colors">Retreat</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold tracking-wider mb-4 uppercase text-sm">Connect</h4>
+                        <ul class="space-y-3">
+                            <li><a href="https://instagram.com/alteredstatesexperience" target="_blank" class="text-white/70 hover:text-white transition-colors">Instagram</a></li>
+                            <li><a href="#" target="_blank" class="text-white/70 hover:text-white transition-colors">Facebook</a></li>
+                            <li><a href="mailto:gene@gkfitness.com.au" class="text-white/70 hover:text-white transition-colors">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <h2 class="font-display text-6xl md:text-9xl text-white/10 tracking-widest mb-8 select-none">ALTERED STATES</h2>
+                <div class="flex flex-col md:flex-row justify-between items-center text-white/50 text-sm">
+                    <p>&copy; 2026 Altered States Experience. All rights reserved.</p>
+                    <p class="mt-2 md:mt-0">Safe, legal, drug-free experience.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lead Capture Popup (Hidden by default, triggered by JS logic in real implementation) -->
+    <div id="lead-popup" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4 relative shadow-2xl transform scale-95 transition-transform duration-300">
+            <button onclick="document.getElementById('lead-popup').classList.add('hidden')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-brand-light rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-brand-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                </div>
+                <h3 class="font-serif text-2xl text-brand-dark mb-2">Free Breathwork Release Guide</h3>
+                <p class="text-gray-600 text-sm">Enter your email to receive our comprehensive guide to starting your breathwork journey.</p>
+            </div>
+            <form class="space-y-4">
+                <input type="text" placeholder="First Name" class="w-full border border-gray-200 px-4 py-3 rounded-md focus:outline-none focus:border-brand-coral">
+                <input type="email" placeholder="Email Address" class="w-full border border-gray-200 px-4 py-3 rounded-md focus:outline-none focus:border-brand-coral">
+                <button type="submit" class="w-full bg-brand-coral text-white py-3 rounded-md font-medium hover:bg-orange-600 transition-colors">Send Me The Guide</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Simple navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-sm');
+            } else {
+                nav.classList.remove('shadow-sm');
+            }
+        });
+
+        // Demo logic to show popup after 5 seconds
+        setTimeout(() => {
+            const popup = document.getElementById('lead-popup');
+            if(popup) {
+                popup.classList.remove('hidden');
+                // Small delay to allow display:block to apply before animating opacity
+                setTimeout(() => {
+                    popup.classList.remove('opacity-0');
+                    popup.querySelector('div').classList.remove('scale-95');
+                }, 10);
+            }
+        }, 5000);
+    </script>
+</body>
+</html>

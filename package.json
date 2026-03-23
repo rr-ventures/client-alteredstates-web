@@ -1,15 +1,5 @@
 {
   "name": "client-alteredstates-web",
   "private": true,
-  "scripts": {
-    "install:lovable": "npm install --prefix apps/lovable",
-    "install:bolt": "npm install --prefix apps/bolt",
-    "install:all": "npm run install:lovable && npm run install:bolt",
-    "dev:lovable": "npm run dev --prefix apps/lovable",
-    "dev:bolt": "npm run dev --prefix apps/bolt",
-    "dev:all": "powershell -ExecutionPolicy Bypass -File ./scripts/start-local-sites.ps1",
-    "build:lovable": "npm run build --prefix apps/lovable",
-    "build:bolt": "npm run build --prefix apps/bolt",
-    "build:all": "npm run build:lovable && npm run build:bolt"
-  }
+  "scripts": {}
 }
