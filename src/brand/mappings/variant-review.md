@@ -1,31 +1,21 @@
-# Template Variants Review
+# Gemini HTML variants (current repo)
 
-After extracting the templates, organizing the shared assets, and applying the initial brand pass (hero video, nav structure, page titles), here is a review of the five variants:
+This repository ships two static HTML prototypes generated as design explorations. Older template names (Ahana, Meditative, etc.) are no longer present in the tree.
 
-## 1. Ahana (`apps/ahana`)
-- **Strengths:** Excellent built-in structure for events, facilitators, testimonials, and lead capture. It has a dedicated pricing section that works perfectly for the high-ticket retreat.
-- **Weaknesses:** The default styling is quite energetic and "fitness studio" (coral colors, heavy animations).
-- **Fit for Gene:** Strong conversion structure, but needs CSS tuning to feel more like the calm Zenthai reference.
+## Gemini v1 (`apps/gemini-v1/index.html`)
 
-## 2. Meditative (`apps/meditative`)
-- **Strengths:** The typography (serif headings) and softer color palette are the closest starting point to the Zenthai Shiatsu reference. It feels editorial and calm.
-- **Weaknesses:** The "schedule" concept is built for a weekly studio timetable, not multi-city Humanitix events. We will need to adapt the class grid for events.
-- **Fit for Gene:** Best visual starting point for the "mystical-but-grounded" tone.
+- **Typography:** Bebas Neue (display), Inter (body), Playfair Display (editorial headings / quotes), Montserrat (secondary).
+- **Color story:** Coral primary (`brand-coral`), purple atmospheric sections, light gray page background, amber for stars / urgency accents.
+- **Layout notes:** Full-viewport hero with video; “Who we are” with framed image + coral border accent; staggered offerings grid; retreat block with full-bleed background image and purple overlay; horizontal snap-scroll testimonials; Humanitix placeholder; team as circular portraits; purple gradient footer with large watermark title; **lead popup** after 5 seconds (demo).
+- **Nav anchors:** `#who-we-are`, `#offerings`, `#events`, `#retreat`, `#team` (all linked in the desktop nav).
 
-## 3. Yogalax (`apps/yogalax`)
-- **Strengths:** Very clean, modern Bootstrap 4 layout. Good balance of imagery and text. Has strong testimonial and pricing blocks.
-- **Weaknesses:** Still leans a bit toward "gym membership" out of the box.
-- **Fit for Gene:** A solid middle-ground option that is easy to adapt.
+## Gemini v2 (`apps/gemini-v2/index.html`)
 
-## 4. Zogin (`apps/zogin`)
-- **Strengths:** Comprehensive page templates (FAQ, pricing, team).
-- **Weaknesses:** Very busy with carousels and stat counters. Feels very "training school".
-- **Fit for Gene:** Usable, but requires the most work to strip back the clutter to achieve a premium feel.
-
-## 5. Yoga (`apps/yoga`)
-- **Strengths:** Simple and lightweight.
-- **Weaknesses:** Outdated design patterns (heavy gradients, circles). Missing dedicated pages for events and contact.
-- **Fit for Gene:** Weakest option. Does not align well with the premium, credible brand goals.
+- **Typography:** Montserrat (display/bold uppercase), Inter (body), Caveat (script accents).
+- **Color story:** Purple/amber/red CTAs, warm `sand` and `lavender` section backgrounds; red replaces coral for primary buttons.
+- **Layout notes:** 90vh hero; **stats bar** immediately below hero; overlapping soft-shadow images in intro; card-style offerings with full-width buttons; retreat section on sand background (lighter than v1’s cinematic block); **3-column** testimonial grid (fewer quotes than v1’s slider); Humanitix placeholder; team; compact dark footer with Instagram/Facebook icons; same **5s lead popup** pattern.
+- **Nav anchors:** Same core set; v2 omits a dedicated “Team” item in the top nav (team section exists on-page).
 
 ## Recommendation
-**Meditative** and **Yogalax** are the strongest contenders for the final build. Meditative provides the best aesthetic match for the Zenthai reference, while Yogalax offers the most adaptable modern layout. Ahana is a strong third option if conversion features (pricing tables, event lists) are prioritized over initial aesthetics.
+
+Prefer **v1** for production direction when matching `references/BRAND_GUIDE.md` (coral accent, serif editorial voice, light premium feel). Use **v2** for layout/UX comparisons (stats bar, card grid testimonials, script accents).

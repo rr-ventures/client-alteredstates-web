@@ -1,7 +1,10 @@
-# Media Usage Across Variants
+# Media usage (Gemini static HTML)
 
-## Hero Video
-- `HERO VIDEO.mp4` -> Use for the main hero background on the Home page.
+Image files below are referenced from `references/client_assets/` in `apps/gemini-v1/index.html` and `apps/gemini-v2/index.html`. Place binaries in that folder (they may be omitted from git — see `README.md`).
+
+## Hero video
+
+- `hero-video.mp4` — copy into `apps/gemini-v1/` and `apps/gemini-v2/` next to each `index.html`. (A source master may exist as `HERO VIDEO.mp4` in client asset exports.)
 
 ## Hero Images (Fallback/Alternative)
 - `611185010_17992576616911758_6359808428520505471_n.jpg` -> Primary hero image fallback

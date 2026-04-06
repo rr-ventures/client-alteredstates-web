@@ -1,43 +1,19 @@
-# Template Page & Section Mappings
+# Section → WordPress mapping (Gemini variants)
 
-## Common Required Pages
-- **Home:** Hero, Intro, Offerings (Events/Retreat), Testimonials, Team, Lead Capture
-- **Events:** Upcoming workshops, Humanitix links
-- **Programs (Retreat):** Immersion retreat details, Pricing, Calendly link
-- **About:** Team bios, Mission
-- **Contact:** Contact info, Form
+Both variants are a **single front page** with in-page sections (anchor IDs). For WordPress, map each block to a reusable pattern (block theme, page builder section, or ACF flexible row).
 
-## 1. Ahana (`apps/ahana`)
-- **Home (`index.html`):** Hero -> Video Hero; Classes -> Offerings; Trainers -> Team; Reviews -> Testimonials; Events -> Upcoming Events; Pricing -> Retreat Pricing.
-- **Events (`events.html`):** Map to Events page.
-- **Retreat (`classes-details.html` or `pricing` section):** Map to Programs/Retreat.
-- **About (`about.html`):** Map to About.
-- **Contact (`contact.html`):** Map to Contact.
+| HTML section / `#id` | Suggested WP block / template part | Notes |
+|---------------------|-----------------------------------|--------|
+| Nav + logo | Header / site logo + menu | Mobile menu not built in static HTML. |
+| Hero (video + CTAs) | Cover / hero + background video | Provide WebM or poster fallback for performance. |
+| `#who-we-are` | Text + media | v1: single hero image + frame; v2: two overlapping images. |
+| Quote band (v1: Vi; v2: Lynda) | Group or pattern | Optional reusable “pull quote”. |
+| `#offerings` | Two-column feature cards | Workshops vs retreat; Calendly on retreat CTA. |
+| `#retreat` | Detailed program section | v1: immersive full-bleed; v2: checklist card + images. |
+| Testimonials | Slider (v1) or grid (v2) | Source copy from HTML; connect to review plugin if desired. |
+| `#events` | Custom HTML / Humanitix embed | Replace placeholder with official widget or iframe when available. |
+| `#team` | Team grid (3 bios) | CPT “Team member” or static blocks. |
+| Footer | Footer template | Newsletter form + social + explore links. |
+| `#lead-popup` | Plugin or delayed modal | Wire to ESP (Mailchimp, etc.); avoid intrusive timing in production or gate with cookie. |
 
-## 2. Meditative (`apps/meditative`)
-- **Home (`index.html`):** Slider -> Video Hero; Services -> Offerings; Testimony -> Testimonials; Counters -> Social Proof.
-- **Events (`classes.html`):** Map to Events page (repurpose class grid).
-- **Retreat (`about.html` + custom pricing):** Map to Programs/Retreat.
-- **About (`trainer.html` / `about.html`):** Map to About.
-- **Contact (`contact.html`):** Map to Contact.
-
-## 3. Yoga (`apps/yoga`)
-- **Home (`index.html`):** Banner -> Video Hero; Services -> Offerings; Section-4 -> Retreat Teaser.
-- **Events (`services.html`):** Map to Events.
-- **Retreat (`rates.html` / `products.html`):** Map to Programs/Retreat.
-- **About (`about.html`):** Map to About.
-- **Contact (Footer / New Page):** Map to Contact.
-
-## 4. Yogalax (`apps/yogalax`)
-- **Home (`index.html`):** Hero -> Video Hero; Classes -> Offerings; Pricing -> Retreat Pricing; Testimonial -> Testimonials.
-- **Events (`classes.html` or `schedule.html`):** Map to Events.
-- **Retreat (Pricing section / `classes.html`):** Map to Programs/Retreat.
-- **About (`about.html`):** Map to About.
-- **Contact (`contact.html`):** Map to Contact.
-
-## 5. Zogin (`apps/zogin`)
-- **Home (`index.html`):** Hero -> Video Hero; Services -> Offerings; Upcoming Courses -> Events; Instructors -> Team; Testimonials -> Testimonials.
-- **Events (`classes.html`):** Map to Events.
-- **Retreat (`pricing.html` / `classes-details.html`):** Map to Programs/Retreat.
-- **About (`about-us.html`):** Map to About.
-- **Contact (`contact.html`):** Map to Contact.
+Calendly and Humanitix URLs in the repo are **placeholders or public marketing links**—replace with the client’s final scheduling and ticketing assets during migration.

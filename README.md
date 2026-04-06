@@ -1,43 +1,58 @@
 # client-alteredstates-web
 
-Umbrella repo for the Altered States website variants.
+Static HTML prototypes for **Altered States Experience** (breathwork / retreats). Each variant is a single long-form landing page: Tailwind CSS via CDN, optional hero background video, **Calendly** popup widgets (placeholder URL until production), and a **Humanitix** events placeholder with a link to the live host page.
 
-## Structure
+## Recommended variant
 
-- `apps/lovable` - current Lovable version
-- `apps/bolt` - current Bolt version
-- `apps/asbreathwork` - placeholder/client repo content copied in as-is
+**Use `apps/gemini-v1/` as the primary reference for WordPress migration and client-facing review.**
 
-## Local development (no container required)
+- **Brand alignment:** Coral primary accent (`#F26B5B`), purple secondary, and **Playfair Display** for editorial headings match the direction in `references/BRAND_GUIDE.md` (light, airy, premium wellness—not “gym flyer”).
+- **Structure:** Full single-page flow with a distinctive retreat section (full-bleed imagery + checklist), horizontal testimonial scroller, and a richer footer treatment.
+- **`apps/gemini-v2/`** is a valid alternate layout (Montserrat + Caveat script, sand/lavender panels, red CTAs). Keep it for A/B or design discussion, but it diverges more from the documented brand palette (red vs coral; less serif editorial voice).
 
-Install dependencies for the Vite apps:
+## Repository layout
 
-```powershell
-npm run install:all
+| Path | Purpose |
+|------|---------|
+| `apps/gemini-v1/index.html` | Primary design variant (single page, sections as anchors). |
+| `apps/gemini-v2/index.html` | Alternate layout; same general content with different typography and UI chrome. |
+| `references/BRAND_GUIDE.md` | Unified brand and design rules for copy and visuals. |
+| `references/client_assets/` | Intended home for client-supplied images referenced by the HTML filenames (see below). |
+| `src/brand/brief/altered-states-client-brief.md` | Client / project brief. |
+| `src/brand/mappings/` | Section mapping notes (`variant-review.md`, `template-mappings.md`, `media-usage.md`). |
+| `WP_MIGRATION.md` | WordPress migration notes (content inventory, Calendly, assets, plugin suggestions). |
+
+## Local preview
+
+The HTML loads images with paths such as `../../references/client_assets/<filename>.jpg` and hero video as `hero-video.mp4` next to each `index.html`. **Serve the repository root** so those relative paths resolve.
+
+```bash
+npm install
+npm run dev:v1
 ```
 
-Run both current site variants together:
+Open **http://localhost:3001/apps/gemini-v1/** (trailing slash matters for `serve`).
 
-```powershell
-npm run dev:all
+```bash
+npm run dev:v2
 ```
 
-Or run one app at a time:
+Open **http://localhost:3002/apps/gemini-v2/**
 
-```powershell
-npm run dev:lovable
-npm run dev:bolt
-```
+`npm run dev` is an alias for `dev:v1`.
 
-Open in your system browser (Vite also tries to open one for you):
+### Assets not in Git
 
-- Lovable: [http://localhost:5173](http://localhost:5173) (default; may shift if the port is busy — read the terminal)
-- Bolt: [http://localhost:5174](http://localhost:5174)
+If images or `hero-video.mp4` are missing locally, sections will show broken media until you add:
 
-We avoid **8080/8081** here because they are very often taken by other tools (Docker Desktop, other apps), which makes Vite exit immediately and the site look “broken” in the browser.
+- **Images:** Filenames listed in `WP_MIGRATION.md` (section *Assets to migrate*) and `src/brand/mappings/media-usage.md`, placed under `references/client_assets/`.
+- **Video:** `apps/gemini-v1/hero-video.mp4` and `apps/gemini-v2/hero-video.mp4` (same file can be copied to both folders).
 
-If `npm run dev` prints a different URL, use that one. To free a port on Windows: `Get-NetTCPConnection -LocalPort 5173` then stop the listed process.
+## Scripts (npm)
 
-## Shared Docker setup
+| Script | Description |
+|--------|-------------|
+| `npm run dev` / `npm run dev:v1` | Static server on port **3001** (repo root). |
+| `npm run dev:v2` | Static server on port **3002** (repo root). |
 
-This repo does **not** ship its own Dev Container. Use your existing shared environment if you develop inside Docker elsewhere.
+There are no Vite/React apps in this repository; older README references to Lovable/Bolt and `install:all` referred to a previous layout and have been removed.
